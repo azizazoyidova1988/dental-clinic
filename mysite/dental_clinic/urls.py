@@ -10,4 +10,5 @@ urlpatterns=[
     path('testimonial/', views.testimonial, name='testimonial'),
     path('appointment/', views.appointment, name='appointment'),
     path('contact/', views.contact, name='contacts'),
+    path('dashboard/', include('dashboard.urls')),
 ]

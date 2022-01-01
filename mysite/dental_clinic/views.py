@@ -5,6 +5,14 @@ from .forms import *
 
 
 def home(request):
+    model = Users()
+    form = UserForm(request.POST, instance=model)
+    if request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            print(form.errors)
     services = get_services()
     doctors = get_doctor()
     testimonials = get_testimonials()
